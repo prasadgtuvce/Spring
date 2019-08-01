@@ -1,0 +1,45 @@
+Singleton Default 
+
+>> TennisCoach: inside default constructor
+
+Pointing to the same object: true
+
+Memory location for theCoach: com.springdemo.TennisCoach@6166e06f
+
+Memory location for alphaCoach: com.springdemo.TennisCoach@6166e06f
+
+------------------------------------------------------------------------------
+@Scope("singleton")
+
+>> TennisCoach: inside default constructor
+
+Pointing to the same object: true
+
+Memory location for theCoach: com.springdemo.TennisCoach@27c6e487
+
+Memory location for alphaCoach: com.springdemo.TennisCoach@27c6e487
+
+-----------------------------------------------------------------------------
+@Scope("prototype")
+
+>> TennisCoach: inside default constructor
+>> TennisCoach: inside default constructor
+
+Pointing to the same object: false
+
+Memory location for theCoach: com.springdemo.TennisCoach@27c6e487
+
+Memory location for alphaCoach: com.springdemo.TennisCoach@49070868
+
+
+
+
+
+
+public class EagerInitialization {
+    private static final EagerInitialization instance = new EagerInitialization();
+    private EagerInitialization(){}
+    public static EagerInitialization getInstance(){
+        return instance;
+    }
+}
